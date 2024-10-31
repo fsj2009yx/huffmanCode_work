@@ -1,5 +1,5 @@
 #include "huffmanTree.h"
-
+#include<QFile>
 HaffmanCode::HaffmanCode(const string &text)
 {
     root=buildHuffmanTree(text);
@@ -69,13 +69,13 @@ string HaffmanCode::encode(const string& text)
     return encodedString;
 }
 
-bool HaffmanCode::writeToFile(const string& filename, const string& text)
+int HaffmanCode::writeToFile(const string& filename, const string& text)
 {
     ofstream ofs(filename, ios::binary);//binary以二进制模式打开文件
     if (!ofs)
     {
         qDebug() << "Failed to open file for writing." ;
-        return false;
+        return -1;
     }
 
     // 写入字典的大小
@@ -107,5 +107,8 @@ bool HaffmanCode::writeToFile(const string& filename, const string& text)
 
     ofs.write(reinterpret_cast<const char*>(binaryData.data()), binaryData.size());
     ofs.close();
-    return true;
+    QFile out(QString::fromStdString(filename));
+    quint64 Size=out.size();
+    int sizeKB=static_cast<int>(qFloor(static_cast<double>(Size)/1024.0));//转为KB
+    return sizeKB;
 }

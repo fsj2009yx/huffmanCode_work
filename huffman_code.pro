@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,12 +12,14 @@ SOURCES += \
     huffmanDecode.cpp \
     huffmanTree.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    zlibzip.cpp
 
 HEADERS += \
     huffmanDecode.h \
     huffmanTree.h \
-    mainwindow.h
+    mainwindow.h \
+    zlibzip.h
 
 FORMS += \
     mainwindow.ui

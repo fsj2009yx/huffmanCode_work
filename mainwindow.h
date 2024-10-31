@@ -5,6 +5,7 @@
 #include<QFileDialog>
 #include<QMessageBox>
 #include<QElapsedTimer>
+#include <QRegularExpression>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,8 +25,6 @@ private slots:
     void on_huffmanCodeButton_clicked();
 
     void on_encodeFileButton_clicked();
-
-    void on_lz4Button_clicked();
 
     void on_zipCodeButton_clicked();
 

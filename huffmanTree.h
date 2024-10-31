@@ -31,7 +31,7 @@ class HaffmanCode
 public:
     HaffmanCode(const string& text);
     ~HaffmanCode();
-    bool writeToFile(const string& filename,const string &text);//将编码写入文件
+    int writeToFile(const string& filename,const string &text);//将编码写入文件
 private:
     Node* root;//哈夫曼树根节点
     unordered_map<char, string> dict;//哈夫曼编码字典

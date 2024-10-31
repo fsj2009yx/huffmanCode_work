@@ -1,5 +1,4 @@
 #include "huffmanDecode.h"
-
 unordered_map<string, char> readDictionary(ifstream& ifs)
 {
     unordered_map<string, char> dict;
